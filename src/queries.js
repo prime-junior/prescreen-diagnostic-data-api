@@ -1,6 +1,7 @@
 /* Import standard values from PostgreSQL of the 'pg' node-module, 
 values: user, database, password, port */
-const { user, database, password, port } = require('pg/lib/defaults')
+
+// const { user, database, password, port } = require('pg/lib/defaults')
 
 // Import database configuration
 const dbConfig = require('./configs/db')

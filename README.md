@@ -184,6 +184,8 @@ prescreen-diag-data-node-api-psql/
     └── server.js         # Main server file
 ```
 
+
+
 ## Technologies Used
 
 - **Node.js** - JavaScript runtime environment
@@ -194,10 +196,34 @@ prescreen-diag-data-node-api-psql/
 - **cors** - Cross-Origin Resource Sharing middleware
 - **body-parser** - Body parsing middleware
 
+## Useful Commands
+
+Frequently used commands for development and maintenance:
+
+```sh
+# Install dependencies
+npm install
+
+# Run the server
+node src/server.js
+
+# Update all dependencies to the latest versions allowed by package.json
+npm update
+
+# Update all dependencies to the latest available versions
+npx npm-check-updates -u
+npm install
+
+# Update a specific dependency to the latest version
+npm install <package-name>@latest
+
+# Check globally installed dependencies
+npm list -g --depth=0
+```
+
 ## Author
 
-Developed by [Weverson Barbieri de Oliveira](https://github.com/weversonbarbieri)  
-E-mail: weverson.b@mintt.com
+Developed by [Weverson Barbieri de Oliveira](https://github.com/weversonbarbieri)
 
 ## License
 

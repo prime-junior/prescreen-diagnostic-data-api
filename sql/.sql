@@ -32,6 +32,15 @@ CREATE TABLE prescreen_diag_data (
 
 -- Import the df_prescreen_cleaned.csv to the database
 -- used \copy command because COPY is not authorized
-\copy prescreen_diag_data (created_time, h_number, entry_type, technician, source, year, make, model, engine_size, hdw_part_number, part_number, original_problems, original_dtcs, fs1_ecu_problems, fs1_ecu_dtcs, problems_related, additional_notes, resolution) 
-FROM 'C:\Language_Projects\Language_Projects\Python\Flagship_1\automotive_diagnostic_data_cleaning\data\data_cleaned\df_prescreen_cleaned.csv' 
-WITH (FORMAT csv, HEADER true, ENCODING 'UTF8');
+\copy prescreen_diag_data (created_time, h_number, entry_type, technician, source, year, make, model, engine_size, hdw_part_number, part_number, original_problems, original_dtcs, fs1_ecu_problems, fs1_ecu_dtcs, problems_related, additional_notes, resolution) FROM 'C:\Language_Projects\Language_Projects\Python\Flagship_1\automotive_diagnostic_data_cleaning\data\data_cleaned\df_prescreen_cleaned.csv' WITH (FORMAT csv, HEADER true, ENCODING 'UTF8');
+
+-- Grant admin privileges to the db. 
+-- Command CAN BE executed through the user: prescreen_db
+GRANT ALL PRIVILEGES ON DATABASE prescreen_diag_data_api TO prescreen_db;
+
+-- Grant privileges under all tables from the schema public
+-- Command MUST BE executed through the SUPERUSER: postgres
+GRANT ALL PRIVILEGES ON ALL TABLES IN SCHEMA public TO prescreen_db;
+
+-- Grant all privileges on table prescreen_diag_data
+GRANT ALL PRIVILEGES ON TABLE prescreen_diag_data TO prescreen_db
