@@ -221,10 +221,6 @@ npm install <package-name>@latest
 npm list -g --depth=0
 ```
 
-## Author
-
-Developed by [Weverson Barbieri de Oliveira](https://github.com/weversonbarbieri)
-
 ## License
 
 MIT
